@@ -1,0 +1,15 @@
+@import "base.css";
+
+:root {
+	--c-blue-primary: #1976D2;
+	--c-blue-secondary: #2196F3;
+	--c-blue-background: var(--c-white);
+	--c-blue-background-soft: var(--c-white-soft);
+	--c-blue-color: var(--c-black);
+	--c-blue-color-soft: var(--c-black-soft);
+
+	--c-blue-page-header: var(--c-blue-primary);
+	--c-blue-page-footer: var(--c-grey-dark);
+	--c-blue-page-color: var(--c-black);
+	--c-blue-page-color-1: var(--c-black-soft);
+}

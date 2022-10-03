@@ -1,0 +1,15 @@
+@import "base.css";
+
+:root {
+	--c-light-primary: var(--c-grey-soft);
+	--c-light-secondary: var(--c-grey-softer);
+	--c-light-background: var(--c-white);
+	--c-light-background-soft: var(--c-white-soft);
+	--c-light-color: var(--c-black);
+	--c-light-color-soft: var(--c-black-soft);
+
+	--c-light-page-header: var(--c-light-primary);
+	--c-light-page-footer: var(--c-grey-dark);
+	--c-light-page-color: var(--c-black);
+	--c-light-page-color-1: var(--c-black-soft);
+}

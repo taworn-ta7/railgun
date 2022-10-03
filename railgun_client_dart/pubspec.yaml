@@ -1,0 +1,18 @@
+name: railgun_client_dart
+description: A Railgun server connection library.
+version: 1.0.0
+homepage: https://gitlab.com/taworn.ta7/railgun
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  logging: ^1.0.2
+  json_annotation: ^4.6.0
+  http: ^0.13.4
+
+dev_dependencies:
+  lints: ^1.0.0
+  test: ^1.21.4
+  build_runner: ^2.2.0
+  json_serializable: ^6.3.1

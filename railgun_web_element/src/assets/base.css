@@ -1,0 +1,13 @@
+:root {
+	--c-black: #111;
+	--c-black-soft: #222;
+	--c-black-softer: #444;
+	--c-white: #fff;
+	--c-white-soft: #eee;
+	--c-white-softer: #ddd;
+	--c-grey: #888;
+	--c-grey-soft: #999;
+	--c-grey-softer: #ccc;
+	--c-grey-dark: #777;
+	--c-grey-darker: #555;
+}

@@ -1,0 +1,15 @@
+@import "base.css";
+
+:root {
+	--c-nature-primary: #388E3C;
+	--c-nature-secondary: #4CAF50;
+	--c-nature-background: var(--c-white);
+	--c-nature-background-soft: var(--c-white-soft);
+	--c-nature-color: var(--c-black);
+	--c-nature-color-soft: var(--c-black-soft);
+
+	--c-nature-page-header: var(--c-nature-primary);
+	--c-nature-page-footer: var(--c-grey-dark);
+	--c-nature-page-color: var(--c-white);
+	--c-nature-page-color-1: var(--c-white-soft);
+}

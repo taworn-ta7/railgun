@@ -1,0 +1,15 @@
+@import "base.css";
+
+:root {
+	--c-lite-primary: #2196F3;
+	--c-lite-secondary: var(--c-grey-softer);
+	--c-lite-background: var(--c-white);
+	--c-lite-background-soft: var(--c-white-soft);
+	--c-lite-color: var(--c-black);
+	--c-lite-color-soft: var(--c-black-soft);
+
+	--c-lite-page-header: var(--c-lite-primary);
+	--c-lite-page-footer: var(--c-grey-dark);
+	--c-lite-page-color: var(--c-black);
+	--c-lite-page-color-1: var(--c-black-soft);
+}

@@ -1,0 +1,15 @@
+@import "base.css";
+
+:root {
+	--c-dark-primary: #1976D2;
+	--c-dark-secondary: var(--c-black-soft);
+	--c-dark-background: var(--c-black-softer);
+	--c-dark-background-soft: var(--c-grey-dark);
+	--c-dark-color: var(--c-white);
+	--c-dark-color-soft: var(--c-white-soft);
+
+	--c-dark-page-header: var(--c-dark-primary);
+	--c-dark-page-footer: var(--c-grey-dark);
+	--c-dark-page-color: var(--c-white);
+	--c-dark-page-color-1: var(--c-white-soft);
+}

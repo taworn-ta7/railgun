@@ -1,0 +1,1358 @@
+{
+	"info": {
+		"_postman_id": "6a158f05-69e4-4020-8ba5-15ec93033b98",
+		"name": "railgun",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8388161"
+	},
+	"item": [
+		{
+			"name": "common",
+			"item": [
+				{
+					"name": "about",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}about",
+							"host": [
+								"{{host}}{{path}}about"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "config",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}config",
+							"host": [
+								"{{host}}{{path}}config"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}setup",
+							"host": [
+								"{{host}}{{path}}setup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "members",
+			"item": [
+				{
+					"name": "signup: test0",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"test0@your.diy\",\r\n        \"password\": \"test0\",\r\n        \"confirmPassword\": \"test0\",\r\n        \"locale\": \"en\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members/signup",
+							"host": [
+								"{{host}}{{path}}members"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup: member0",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"member0@your.diy\",\r\n        \"password\": \"0000\",\r\n        \"confirmPassword\": \"0000\",\r\n        \"locale\": \"en\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members/signup",
+							"host": [
+								"{{host}}{{path}}members"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup: member1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"member1@your.diy\",\r\n        \"password\": \"1111\",\r\n        \"confirmPassword\": \"1111\",\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members/signup",
+							"host": [
+								"{{host}}{{path}}members"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request reset: member0",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"member0@your.diy\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members/request-reset",
+							"host": [
+								"{{host}}{{path}}members"
+							],
+							"path": [
+								"request-reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"member1@your.diy\",\r\n        \"password\": \"1111\",\r\n        \"confirmPassword\": \"1111\",\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members",
+							"host": [
+								"{{host}}{{path}}members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list, order by email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"member1@your.diy\",\r\n        \"password\": \"1111\",\r\n        \"confirmPassword\": \"1111\",\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members?page=0&order=email-",
+							"host": [
+								"{{host}}{{path}}members"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "order",
+									"value": "email-"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list, order by email, search 'mem'",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"member1@your.diy\",\r\n        \"password\": \"1111\",\r\n        \"confirmPassword\": \"1111\",\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members?page=0&order=email-&search=mem",
+							"host": [
+								"{{host}}{{path}}members"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "order",
+									"value": "email-"
+								},
+								{
+									"key": "search",
+									"value": "mem"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list, order by email, trash",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"member1@your.diy\",\r\n        \"password\": \"1111\",\r\n        \"confirmPassword\": \"1111\",\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members?page=0&order=email-&trash=1",
+							"host": [
+								"{{host}}{{path}}members"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "order",
+									"value": "email-"
+								},
+								{
+									"key": "trash",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get, member0@your.diy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"member1@your.diy\",\r\n        \"password\": \"1111\",\r\n        \"confirmPassword\": \"1111\",\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members/:email",
+							"host": [
+								"{{host}}{{path}}members"
+							],
+							"path": [
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "member0@your.diy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get, a@b.c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"member1@your.diy\",\r\n        \"password\": \"1111\",\r\n        \"confirmPassword\": \"1111\",\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members/:email",
+							"host": [
+								"{{host}}{{path}}members"
+							],
+							"path": [
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "a@b.c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get icon, member0@your.diy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"member1@your.diy\",\r\n        \"password\": \"1111\",\r\n        \"confirmPassword\": \"1111\",\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members/:email/icon",
+							"host": [
+								"{{host}}{{path}}members"
+							],
+							"path": [
+								":email",
+								"icon"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "member0@your.diy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get icon, a@b.c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"email\": \"member1@your.diy\",\r\n        \"password\": \"1111\",\r\n        \"confirmPassword\": \"1111\",\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}members/:email/icon",
+							"host": [
+								"{{host}}{{path}}members"
+							],
+							"path": [
+								":email",
+								"icon"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "a@b.c"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "authen",
+			"item": [
+				{
+					"name": "signin: admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"signin\": {\r\n        \"email\": \"admin@your.diy\",\r\n        \"password\": \"admin\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/signin",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin: test0",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"signin\": {\r\n        \"email\": \"test0@your.diy\",\r\n        \"password\": \"test0\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/signin",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin: member0, 0000",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"signin\": {\r\n        \"email\": \"member0@your.diy\",\r\n        \"password\": \"0000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/signin",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin: member0, PASS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"signin\": {\r\n        \"email\": \"member0@your.diy\",\r\n        \"password\": \"PASS\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/signin",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin: member1, 1111",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"signin\": {\r\n        \"email\": \"member1@your.diy\",\r\n        \"password\": \"1111\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/signin",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin: member1, PASS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"signin\": {\r\n        \"email\": \"member1@your.diy\",\r\n        \"password\": \"PASS\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/signin",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin: error",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const ret = pm.response.json();\r",
+									"pm.environment.set(\"token\", ret.token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"signin\": {\r\n        \"email\": \"NO-member@your.diy\",\r\n        \"password\": \"NO-PASS\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}authen/signin",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signout",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}authen/signout",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"signout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}authen/check",
+							"host": [
+								"{{host}}{{path}}authen"
+							],
+							"path": [
+								"check"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "upload icon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}{{path}}profile/icon",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view icon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}profile/icon",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete icon",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{path}}profile/icon",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change name: Jenius",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"name\": \"Jenius\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}profile/name",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change name: Jane",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"name\": \"Jane\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}profile/name",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password: 0000",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"currentPassword\": \"0000\",\r\n        \"newPassword\": \"0000\",\r\n        \"confirmPassword\": \"0000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}profile/password",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password: 1111",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"currentPassword\": \"0000\",\r\n        \"newPassword\": \"1111\",\r\n        \"confirmPassword\": \"1111\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}profile/password",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password: PASS",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"currentPassword\": \"0000\",\r\n        \"newPassword\": \"PASS\",\r\n        \"confirmPassword\": \"PASS\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}profile/password",
+							"host": [
+								"{{host}}{{path}}profile"
+							],
+							"path": [
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "settings",
+			"item": [
+				{
+					"name": "change settings: en",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"locale\": \"en\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings/change",
+							"host": [
+								"{{host}}{{path}}settings"
+							],
+							"path": [
+								"change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change settings: th",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"locale\": \"th\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings/change",
+							"host": [
+								"{{host}}{{path}}settings"
+							],
+							"path": [
+								"change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change settings: error",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"locale\": \"eN\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings/change",
+							"host": [
+								"{{host}}{{path}}settings"
+							],
+							"path": [
+								"change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set app-theme=0",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings/app-theme/0",
+							"host": [
+								"{{host}}{{path}}settings"
+							],
+							"path": [
+								"app-theme",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set app-theme=1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings/app-theme/1",
+							"host": [
+								"{{host}}{{path}}settings"
+							],
+							"path": [
+								"app-theme",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get app-theme",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings/app-theme",
+							"host": [
+								"{{host}}{{path}}settings"
+							],
+							"path": [
+								"app-theme"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get app-theme_NOT_FOUND",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings/app-theme_NOT_FOUND",
+							"host": [
+								"{{host}}{{path}}settings"
+							],
+							"path": [
+								"app-theme_NOT_FOUND"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings",
+							"host": [
+								"{{host}}{{path}}settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}settings",
+							"host": [
+								"{{host}}{{path}}settings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "authorize",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}admin/members/authorize?code=",
+							"host": [
+								"{{host}}{{path}}admin"
+							],
+							"path": [
+								"members",
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disabled, disabled",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"disabled\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}admin/members/disable/:email",
+							"host": [
+								"{{host}}{{path}}admin"
+							],
+							"path": [
+								"members",
+								"disable",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "member0@your.diy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disabled, enabled",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"member\": {\r\n        \"disabled\": false\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{path}}admin/members/disable/:email",
+							"host": [
+								"{{host}}{{path}}admin"
+							],
+							"path": [
+								"members",
+								"disable",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "member0@your.diy"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

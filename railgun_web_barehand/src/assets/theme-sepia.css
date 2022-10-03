@@ -1,0 +1,15 @@
+@import "base.css";
+
+:root {
+	--c-sepia-primary: #cabb99;
+	--c-sepia-secondary: #ecddbb;
+	--c-sepia-background: #fdeecc;
+	--c-sepia-background-soft: #ecddbb;
+	--c-sepia-color: var(--c-black);
+	--c-sepia-color-soft: var(--c-black-soft);
+
+	--c-sepia-page-header: var(--c-sepia-primary);
+	--c-sepia-page-footer: var(--c-grey-dark);
+	--c-sepia-page-color: var(--c-black-soft);
+	--c-sepia-page-color-1: var(--c-black-softer);
+}
