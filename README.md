@@ -163,10 +163,10 @@ Here are some list:
 
 * LOG_TO_CONSOLE: log out to console, 0 or 1
 * LOG_TO_FILE: log out to file, 0 or 1
-* DAYS_TO_KEEP_LOG: number of days to keep old log file
-* DAYS_TO_KEEP_DBLOG: number of days to keep old database log
-* DAYS_TO_KEEP_SIGNUP: number of days to keep old records in member_signup table
-* DAYS_TO_KEEP_RESET: number of days to keep old records in member_reset table
+* DAYS_TO_KEEP_LOGS: number of days to keep old log file
+* DAYS_TO_KEEP_DBLOGS: number of days to keep old database log
+* DAYS_TO_KEEP_SIGNUPS: number of days to keep old records in member_signup table
+* DAYS_TO_KEEP_RESETS: number of days to keep old records in member_reset table
 * DB_USE: choose database, sqlite or mysql, railgun_server only
 * DB_HOST: database host
 * DB_PORT: database port

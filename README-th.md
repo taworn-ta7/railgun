@@ -158,16 +158,16 @@ Run:
 
 ## การกำหนดค่า
 
-บน server และ server alternate มีไฟล์ชื่อ ".env.override" อยู่ในต้นทาง folder  มันเก็บการกำหนดค่าและสามารถเปลี่ยนได้
+มีไฟล์ชื่อ ".env.override" อยู่ในต้นทาง folder  มันเก็บการกำหนดค่าและสามารถเปลี่ยนได้
 
 รายการกำหนดค่า:
 
 * LOG_TO_CONSOLE: log ออก console, 0 หรือ 1
 * LOG_TO_FILE: log ออกไฟล์, 0 หรือ 1
-* DAYS_TO_KEEP_LOG: จำนวนวันที่จะเก็บค่าเก่า ก่อนลบ log
-* DAYS_TO_KEEP_DBLOG: จำนวนวันที่จะเก็บค่าเก่า database log
-* DAYS_TO_KEEP_SIGNUP: จำนวนวันที่จะเก็บค่าเก่า สำหรับ records ในตาราง member_signup
-* DAYS_TO_KEEP_RESET: จำนวนวันที่จะเก็บค่าเก่า สำหรับ records ในตาราง member_reset
+* DAYS_TO_KEEP_LOGS: จำนวนวันที่จะเก็บค่าเก่า ก่อนลบ log
+* DAYS_TO_KEEP_DBLOGS: จำนวนวันที่จะเก็บค่าเก่า database log
+* DAYS_TO_KEEP_SIGNUPS: จำนวนวันที่จะเก็บค่าเก่า สำหรับ records ในตาราง member_signup
+* DAYS_TO_KEEP_RESETS: จำนวนวันที่จะเก็บค่าเก่า สำหรับ records ในตาราง member_reset
 * DB_USE: เลือก database, sqlite หรือ mysql, railgun_server เท่านั้น
 * DB_HOST: เครื่องที่ต่อ database
 * DB_PORT: port ที่ใช้
@@ -177,7 +177,7 @@ Run:
 * MAIL_PORT: port ที่ใช้
 * MAIL_USER: user ที่ใช้
 * MAIL_PASS: รหัสผ่านสำหรับเข้าเมล
-* AUTHEN_TIMEOUT: เวลาก่อนที่ session จะหมดอายุ หน่วนเป็น มิลลิวินาที
+* AUTHEN_TIMEOUT: เวลาก่อนที่ session จะหมดอายุ หน่วยเป็น มิลลิวินาที
 * PROFILE_ICON_FILE_LIMIT: จำนวน bytes ที่จะจำกัด ตอนอัพโหลด profile icon
 
 ถ้าคุณใช้ MySQL อย่าลืม สร้าง database เปล่า ชื่อ "railgun"

@@ -28,28 +28,28 @@ export class TasksService {
 	) {
 		this.logDir = path.resolve(path.join(__dirname, '..', '..', env.LOG_DIR));
 		this.logger.verbose(`logs path: ${this.logDir}`);
-		this.logger.verbose(`days to keep logs: ${+env.DAYS_TO_KEEP_LOG} day(s)`);
-		this.logger.verbose(`days to keep database logs: ${+env.DAYS_TO_KEEP_DBLOG} day(s)`);
-		this.logger.verbose(`days to keep unconfirmed signups: ${+env.DAYS_TO_KEEP_SIGNUP} day(s)`);
-		this.logger.verbose(`days to keep unresponded resets: ${+env.DAYS_TO_KEEP_RESET} day(s)`);
+		this.logger.verbose(`days to keep logs: ${+env.DAYS_TO_KEEP_LOGS} day(s)`);
+		this.logger.verbose(`days to keep database logs: ${+env.DAYS_TO_KEEP_DBLOGS} day(s)`);
+		this.logger.verbose(`days to keep unconfirmed signups: ${+env.DAYS_TO_KEEP_SIGNUPS} day(s)`);
+		this.logger.verbose(`days to keep unresponded resets: ${+env.DAYS_TO_KEEP_RESETS} day(s)`);
 	}
 
 	// ----------------------------------------------------------------------
 
 	@Timeout(delayTime)
 	async handleTimeout() {
-		await this.deleteLogs(+env.DAYS_TO_KEEP_LOG, this.logDir);
-		await this.deleteDbLogs(+env.DAYS_TO_KEEP_DBLOG);
-		await this.deleteSignups(+env.DAYS_TO_KEEP_SIGNUP);
-		await this.deleteResets(+env.DAYS_TO_KEEP_RESET);
+		await this.deleteLogs(+env.DAYS_TO_KEEP_LOGS, this.logDir);
+		await this.deleteDbLogs(+env.DAYS_TO_KEEP_DBLOGS);
+		await this.deleteSignups(+env.DAYS_TO_KEEP_SIGNUPS);
+		await this.deleteResets(+env.DAYS_TO_KEEP_RESETS);
 	}
 
 	@Interval(intervalTime)
 	async handleInterval() {
-		await this.deleteLogs(+env.DAYS_TO_KEEP_LOG, this.logDir);
-		await this.deleteDbLogs(+env.DAYS_TO_KEEP_DBLOG);
-		await this.deleteSignups(+env.DAYS_TO_KEEP_SIGNUP);
-		await this.deleteResets(+env.DAYS_TO_KEEP_RESET);
+		await this.deleteLogs(+env.DAYS_TO_KEEP_LOGS, this.logDir);
+		await this.deleteDbLogs(+env.DAYS_TO_KEEP_DBLOGS);
+		await this.deleteSignups(+env.DAYS_TO_KEEP_SIGNUPS);
+		await this.deleteResets(+env.DAYS_TO_KEEP_RESETS);
 	}
 
 	// ----------------------------------------------------------------------
@@ -94,7 +94,7 @@ export class TasksService {
 		const begin = new Date(end.valueOf() - (daysToKeep * 24 * 60 * 60 * 1000));
 
 		// cleanup old logging table
-		this.logger.debug(`database logs data older than ${moment(begin).format('YYYY-MM-DD')} will be delete!`);
+		this.logger.debug(`database logs older than ${moment(begin).format('YYYY-MM-DD')} will be delete!`);
 		await this.dataSource
 			.createQueryBuilder()
 			.delete()
