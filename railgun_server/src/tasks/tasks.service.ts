@@ -3,7 +3,7 @@ import {
 	Injectable,
 } from '@nestjs/common';
 import { Timeout, Interval } from '@nestjs/schedule';
-import { DataSource } from 'typeorm';
+import { DataSource, LessThan } from 'typeorm';
 import * as path from 'path';
 import * as fs from 'fs';
 import * as moment from 'moment';
@@ -95,12 +95,15 @@ export class TasksService {
 
 		// cleanup old logging table
 		this.logger.debug(`database logs older than ${moment(begin).format('YYYY-MM-DD')} will be delete!`);
+		await this.dataSource.getRepository(Logging).delete({ created: LessThan(begin) })
+		/*
 		await this.dataSource
 			.createQueryBuilder()
 			.delete()
 			.from(Logging)
 			.where("created < :timestamp", { timestamp: begin.toISOString() })
 			.execute();
+		*/
 	};
 
 	// ----------------------------------------------------------------------
@@ -117,12 +120,15 @@ export class TasksService {
 
 		// cleanup old member_signup table
 		this.logger.debug(`signups data older than ${moment(begin).format('YYYY-MM-DD')} will be delete!`);
+		await this.dataSource.getRepository(MemberSignUp).delete({ created: LessThan(begin) })
+		/*
 		await this.dataSource
 			.createQueryBuilder()
 			.delete()
 			.from(MemberSignUp)
 			.where("created < :timestamp", { timestamp: begin.toISOString() })
 			.execute();
+		*/
 	};
 
 	// ----------------------------------------------------------------------
@@ -139,12 +145,15 @@ export class TasksService {
 
 		// cleanup old member_reset table
 		this.logger.debug(`resets data older than ${moment(begin).format('YYYY-MM-DD')} will be delete!`);
+		await this.dataSource.getRepository(MemberReset).delete({ created: LessThan(begin) })
+		/*
 		await this.dataSource
 			.createQueryBuilder()
 			.delete()
 			.from(MemberReset)
 			.where("created < :timestamp", { timestamp: begin.toISOString() })
 			.execute();
+		*/
 	};
 
 }

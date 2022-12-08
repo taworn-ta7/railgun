@@ -57,7 +57,7 @@ export class ResetService {
 		// creates reset
 		const reset = new MemberReset();
 		reset.email = email;
-		reset.confirmToken = generateToken();
+		reset.confirmToken = generateToken(64);
 		await this.resetRepo.save(reset);
 
 		// creates url
@@ -114,7 +114,7 @@ export class ResetService {
 			throw new NotFoundException();
 
 		// generates new password
-		const generate = generateToken().substring(0, 8);
+		const generate = generateToken(8);
 		const password = setPassword(generate);
 		member.credential.salt = password.salt;
 		member.credential.hash = password.hash;

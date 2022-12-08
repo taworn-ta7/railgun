@@ -47,7 +47,7 @@ export class MemberSignUp {
 		unique: true,
 	})
 	@Column({
-		length: 1024,
+		length: 128,
 	})
 	confirmToken: string;
 

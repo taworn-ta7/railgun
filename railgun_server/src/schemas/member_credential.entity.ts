@@ -3,6 +3,7 @@ import {
 	Column,
 	PrimaryColumn,
 	OneToOne,
+	JoinColumn,
 	Index,
 } from 'typeorm';
 import { Member } from './member.entity';
@@ -23,6 +24,7 @@ export class MemberCredential {
 	 * Link to [Member]{@link /entities/Member.html}.
 	 */
 	@OneToOne(() => Member, (o) => o.credential)
+	@JoinColumn()
 	member: Member;
 
 	// ----------------------------------------------------------------------
@@ -44,7 +46,7 @@ export class MemberCredential {
 		unique: true,
 	})
 	@Column({
-		length: 1024,
+		length: 256,
 		nullable: true,
 	})
 	token: string | null;

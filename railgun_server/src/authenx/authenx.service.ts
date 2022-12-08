@@ -55,7 +55,7 @@ export class AuthenXService {
 				locale = 'en';
 
 			// creates member
-			const generate = generateToken().substring(0, 8);
+			const generate = generateToken(8);
 			const password = setPassword(generate);
 			const member = new Member();
 			member.id = generateUlid();

@@ -20,20 +20,12 @@ export function validatePassword(password: string, salt: string, hash: string): 
 }
 
 /**
- * Generates secret string.
+ * Generates token string.  Parameter n is limit to 256.
  */
-export function generateSecret(): string {
-	const seed = crypto.randomBytes(128).toString('hex');
-	return Buffer.from(seed).toString('base64');
-}
-
-/**
- * Generates token string.
- */
-export function generateToken(): string {
+export function generateToken(n: number): string {
 	const seed = crypto.randomBytes(128).toString('hex');
 	const code = Buffer.from(seed).toString('base64');
-	return code.substring(0, 64);
+	return code.substring(0, n);
 }
 
 // ----------------------------------------------------------------------
@@ -54,9 +46,9 @@ export async function newOrUpdateToken(member: Member): Promise<string> {
 		// signs token
 		const payload = {
 			id: member.id,
-			sub: member.email,
+			iat: Math.floor(Date.now() / 1000) - 30,
 		};
-		const secret = generateSecret();
+		const secret = generateToken(32);
 		token = await jwt.sign(payload, secret, {});
 
 		// updates member

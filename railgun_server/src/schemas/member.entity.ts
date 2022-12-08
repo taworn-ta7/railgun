@@ -40,7 +40,6 @@ export class Member {
 		onDelete: 'CASCADE',
 		orphanedRowAction: 'delete',
 	})
-	@JoinColumn()
 	credential: MemberCredential;
 
 	/**

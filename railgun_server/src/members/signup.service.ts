@@ -61,7 +61,7 @@ export class SignUpService {
 		const signup = new MemberSignUp(dto);
 		signup.salt = password.salt;
 		signup.hash = password.hash;
-		signup.confirmToken = generateToken();
+		signup.confirmToken = generateToken(64);
 		await this.signUpRepo.save(signup);
 
 		// creates url
